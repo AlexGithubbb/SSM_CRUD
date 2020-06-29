@@ -1,0 +1,3 @@
+INDEX VERSION 1.131
+/Users/Alexpower/Documents/workspace-spring-tool-suite-4-4.7.0.RELEASE/sgg_ssm_crud/.metadata/.plugins/org.eclipse.jst.jsp.core/jspsearch/1089063963.index
+/SGG_Spring/config

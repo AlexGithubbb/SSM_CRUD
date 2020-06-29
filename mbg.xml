@@ -1,0 +1,51 @@
+<!DOCTYPE generatorConfiguration PUBLIC
+ "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+ "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+
+
+  <context id="simple" targetRuntime="MyBatis3">
+  
+  <commentGenerator>
+  	<property name="suppressAllComments" value="true"/>
+  </commentGenerator>
+  
+  <!-- data source config -->
+    <jdbcConnection 
+    	driverClass="com.mysql.jdbc.Driver"
+        connectionURL="jdbc:mysql://localhost:3306/ssm"        
+        userId="root"
+        password="Oracle3*+"
+         />
+
+    <javaModelGenerator 
+    		targetPackage="com.alexpower.crud.bean" 
+    		targetProject="src/main/java">
+    		
+    		<property name="enableSubPackages" value="true"/>
+    		<property name="trimStrings" value="true"/>
+    </javaModelGenerator>
+    
+    <!-- sql mapping file  -->
+    <sqlMapGenerator 
+    	targetPackage="mapper" 
+	    targetProject="src/main/resources">
+	    
+	    <property name="enableSubPackages" value="true"/>
+    </sqlMapGenerator>
+
+    <javaClientGenerator 
+    		type="XMLMAPPER" 
+    		targetPackage="com.alexpower.crud.dao" 
+    		targetProject="src/main/java">
+    		
+    		<property name="enableSubPackages" value="true"/>    		
+    		</javaClientGenerator>
+    		
+    		
+    <table tableName="emp"  domainObjectName="Employee"/>
+    <table tableName="dept" domainObjectName="Department"/>
+    
+    
+  </context>
+</generatorConfiguration>

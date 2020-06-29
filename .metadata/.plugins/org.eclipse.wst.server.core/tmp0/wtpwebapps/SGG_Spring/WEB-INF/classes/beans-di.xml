@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:util="http://www.springframework.org/schema/util"
+    xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+
+    <!-- bean definitions here -->
+    
+    <bean id="s1" class="com.alexpower.list.Student">
+	    <property name="stid" value="001"></property>
+	    <property name="stname" value="James"></property>
+    </bean>
+    <bean id="s2" class="com.alexpower.list.Student">
+	    <property name="stid" value="002"></property>
+	    <property name="stname" value="James"></property>
+    </bean>
+    <bean id="s3" class="com.alexpower.list.Student">
+	    <property name="stid" value="003"></property>
+	    <property name="stname" value="James"></property>
+    </bean>
+    
+    <bean id="t1" class="com.alexpower.list.Teacher">
+	    <property name="tid" value="001"></property>
+	    <property name="tname" value="James Teacher"></property>
+	    <property name="students">
+	    	<list>
+	    		<ref bean="s1" />
+	    		<ref bean="s2" />
+	    		<ref bean="s3" />
+	    	</list>
+	    	
+	    	<!-- map example -->
+	    	<!--  <map>
+		    	<entry>
+		    		<key>	
+		    			<value>key:</value>
+		    		</key>
+		    		<value>value</value>
+		    	</entry>
+		    </map> -->
+    
+	    </property>
+    </bean>
+    
+    
+    <bean id="t2" class="com.alexpower.list.Teacher">
+	    <property name="tid" value="002"></property>
+	    <property name="tname" value="Teacher Bob"></property>
+	    <property name="students" ref="students"></property>
+    </bean>
+    
+    
+    <util:list id="students" >
+    		<ref bean="s1" />
+    		<ref bean="s2" />
+    		<ref bean="s3" />
+    </util:list>
+    
+    <!-- util:map example -->
+    <util:map id="map">
+    	<entry>
+    		<key>
+    			<value>key:</value>
+    		</key>
+    		<value>value</value>
+    	</entry>
+    </util:map>
+    
+    <util:set></util:set>
+
+</beans>

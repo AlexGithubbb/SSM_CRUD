@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ <beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:p="http://www.springframework.org/schema/p"
+    xmlns:context="http://www.springframework.org/schema/context"
+xsi:schemaLocation="
+    http://www.springframework.org/schema/beans 
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+	<!-- bean definitions here -->
+	
+	
+	<!--  
+	
+	<context:include-filter> : under the settled package, will filter again to see what scope of class
+	remember to set use-default-filter = "false" when use include-filter
+				set use-default-filter = "true" when use exclude-filter
+	<context:include-filter type="annotation" expression=" the name of the annotation" />
+	<context:include-filter type="assignable" expression=" the full name of class " />
+	
+	-->
+	
+	<context:component-scan base-package="com.alexpower.userMod" use-default-filters="true">
+		<!-- <context:include-filter type="annotation" expression="org.springframework.stereotype.Controller"/> -->
+		<!-- <context:include-filter type="assignable" expression="com.alexpower.userMod.dao.UserDaoImpl"/> -->
+		<!-- <context:exclude-filter type="annotation" expression="org.springframework.stereotype.Service"/> -->
+	</context:component-scan>
+	
+
+</beans>
